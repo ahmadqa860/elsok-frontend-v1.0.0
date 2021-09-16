@@ -4,6 +4,7 @@ import {logout} from '../../services/userService';
 import {apiUrl} from '../../config.json';
 import {Link, NavLink} from 'react-router-dom';
 import "../../css/navbar.css";
+import elsokLogo from "../../img/core-img/elsok-logo.svg";
 
 class Navbar extends Component{
 
@@ -69,7 +70,7 @@ class Navbar extends Component{
                 <div className="classy-nav-container breakpoint-off">
                     <nav className="classy-navbar" id="bigshopNav">
 
-                        <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="logo"/>
+                        <img className="header__logo" src={elsokLogo} alt="logo"/>
 
                         <div className="classy-navbar-toggler">
                             <span className="navbarToggler"><span></span><span></span><span></span></span>
@@ -104,7 +105,7 @@ class Navbar extends Component{
                         <div className="hero_meta_area mr-auto d-flex align-items-center justify-content-end">
                             <div className="account-area">
                                 <div className="user-thumbnail">
-                                    <img src="img/bg-img/user.jpg" alt=""/>
+                                    <img src="img/bg-img/dashboard.png" alt=""/>
                                 </div>
                                 <ul className="user-meta-dropdown">
                                     <li className="user-title"><span>اهلا</span> {user.name}</li>

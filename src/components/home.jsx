@@ -26,7 +26,6 @@ class Home extends Component {
       <React.Fragment>
         <div className="container-flued">
           <div>
-            <MarqueeTag />
           <CarouselContainer />
           </div>
         </div>

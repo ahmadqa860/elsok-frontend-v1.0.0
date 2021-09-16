@@ -131,7 +131,7 @@ class AddNewProduct extends Form{
                                 <select
                                     name="categorie_id"
                                     id="categorie_id"
-                                    className="custom-select"
+                                    className="custom-select form-group"
                                     onChange={this.handleSelect}
                                     
                                     >

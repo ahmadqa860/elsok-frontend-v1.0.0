@@ -28,9 +28,9 @@ import DeleteShop from "./components/shop/delete-shop";
 import AllProducts from "./components/shop/all-products";
 import EditShopProduct from "./components/shop/edit-product";
 
-import MyProducts from "./components/seller/my-products";
-import AddNewProduct from "./components/seller/add-product";
-import EditProduct from "./components/seller/edit-product";
+import MyProducts from "./components/product/my-products";
+import AddNewProduct from "./components/product/add-product";
+import EditProduct from "./components/product/edit-product";
 
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -93,13 +93,13 @@ class App extends Component {
           <ProtectedRoute path="/my-profile" component={Profile} />
           <ProtectedRoute path="/edit-profile" component={EditProfile} />
 
-          <ProtectedRoute path="/seller/my-products" component={MyProducts} />
+          <ProtectedRoute path="/product/my-products" component={MyProducts} />
           <ProtectedRoute
-            path="/seller/edit-product/:id"
+            path="/product/edit-product/:id"
             component={EditProduct}
           />
           <ProtectedRoute
-            path="/seller/add-product"
+            path="/product/add-product"
             component={AddNewProduct}
           />
 

@@ -59,7 +59,7 @@ class AddUser extends Form {
       this.setState({loading});
       console.log(userType);
       await userService.registerUser(data, userType);
-      this.props.history.replace("/seller/add-product");
+      this.props.history.replace("/product/add-product");
     } 
       catch (ex) {
       const { data } = ex.response;
