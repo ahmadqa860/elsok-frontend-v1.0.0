@@ -1,13 +1,13 @@
 import React from "react";
 
-const Input = ({ name, label, error,classStyle="form-control", ...rest }) => {
+const Textarea = ({ name, label, error, ...rest }) => {
   return (
     <div className="form-group">
       <label htmlFor={name}>{label}</label>
-      <input {...rest} name={name} id={name} className={classStyle} />
+      <textarea {...rest} name={name} id={name} className="form-control" ></textarea>
       {error && <small className="form-text text-danger">{error}</small>}
     </div>
   );
 };
 
-export default Input;
+export default Textarea;

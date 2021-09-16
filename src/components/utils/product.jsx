@@ -34,7 +34,7 @@ const Product =(props)=>{
                 <div className="product_description">
                     {validUser && (
                     <React.Fragment>                    
-                     <div className="product_add_to_cart">
+                    <div className="product_add_to_cart">
                         <Link to={`/seller/edit-product/${product.id}`}><i className="fa fa-eye"></i> Edit</Link>
                     </div>
                                     

@@ -12,7 +12,7 @@ axios.interceptors.response.use(null, (error) => {
   return Promise.reject(error);
 });
 
-const token = localStorage.getItem("token");
+const token = localStorage.getItem("elsok-token");
 
 axios.defaults.headers.common = {
   Authorization: `Bearer ${token}`,

@@ -27,11 +27,9 @@ class EditProduct extends Form{
     }
 
     schema = {
-        categorie_id: Joi.required().label("Category Id"),
         product_title: Joi.string().required().label("Title"),
         product_description: Joi.string().required().label("Description"),
-        product_price: Joi.string().required().label("Price"),
-        images: Joi.string().required().label("Images"),
+        product_price: Joi.required().label("Price"),
     };
 
     mapToViewModel(data){
@@ -44,34 +42,72 @@ class EditProduct extends Form{
         };
     }
 
+    handleSelect = (event) => {
+        let categorie_id = event.target.value;
+        const {data} = this.state;
+        data.categorie_id = categorie_id;
+        this.setState({data});
+    };
+
+    handleFileSelected=(event)=>{
+        let {data} = this.state;
+        data.uploadImage = event.target.files;
+        this.setState({data});
+    }
+
+    doSubmit = async ()=>{
+        var {data} = this.state;
+        console.log(data);
+        const productId = this.props.match.params.id;
+        try{
+            await http.put(`${apiUrl}/seller-products/${productId}`,data);
+
+        }catch(ex){
+            const { data } = ex.response;
+            const errors = data.errors;
+            const err = {};
+            for (const error in errors) {
+                err[error] = errors[error][0];
+            }
+            this.setState({ errors: err });
+
+            if (ex.response && ex.response.status === 400) {
+            }
+        }
+        
+      }
+
     render(){
         const {categories} = this.state;
+        
         return(
             <div className="container mt-3">
             <div className="row">
-                <div className="col-12">
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <label className="input-group-text" htmlFor="inputGroupSelect01">Options</label>
-                        </div>
-                        <select
-                            name="categorie_id"
-                            id="categorie_id"
-                            className="custom-select"
-                            onChange={this.handleSelect}
-                        >
-                        <option defaultValue="">Choose...</option> 
-                        {categories.map((category)=>(
-                        <option key={category.id} value={category.id}>{category.categorie_title}</option>
-                        ))}
-                        </select>
-                    </div>
-                </div>
+               
                 <div className="col-lg-6">
                     <form onSubmit={this.handleSubmit} autoComplete="off" method="POST">
+                        <div className="col-12">
+                            <div className="input-group mb-3">
+                                <div className="input-group-prepend">
+                                    <label className="input-group-text" htmlFor="inputGroupSelect01">Options</label>
+                                </div>
+                                <select
+                                    name="categorie_id"
+                                    id="categorie_id"
+                                    className="custom-select"
+                                    onChange={this.handleSelect}
+                                >
+                                <option defaultValue="">Choose...</option> 
+                                {categories.map((category)=>(
+                                <option key={category.id} value={category.id}>{category.categorie_title}</option>
+                                ))}
+                                </select>
+                            </div>
+                        </div>
                         {this.renderInput('product_title','Product Title')}
                         {this.renderInput('product_description','Product Description')}
                         {this.renderInput('product_price','Product Price')}
+                        {this.renderInputFile("file","الصور")}
                         {this.renderButton("Edit Product")}
                     </form>
                 </div>

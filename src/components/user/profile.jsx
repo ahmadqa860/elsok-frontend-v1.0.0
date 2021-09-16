@@ -8,7 +8,6 @@ import ProfileHeader from '../utils/profileHeader';
 class Profile extends Form {
   state = {
     data: {
-      identity: "",
       name: "",
       mobile: "",
       address: "",
@@ -39,11 +38,6 @@ class Profile extends Form {
                                     <div className="col-12">
                                         <div className="form-group">
                                             {this.renderInput("name", "الأسم الكامل *")}
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="form-group">
-                                            {this.renderInput("identity", "رقم الهوية *")}
                                         </div>
                                     </div>
                                     <div className="col-12">

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Joi from "joi-browser";
 
 import Input from "./input";
+import Textarea from "./textarea";
 
 class Form extends Component {
   state = { data: {}, errors: {} };
@@ -69,6 +70,36 @@ class Form extends Component {
         label={label}
         onChange={this.handleChange}
         error={errors[name]}
+      />
+    );
+  }
+
+  renderInputFile(name, label, type = "file") {
+    const { data, errors } = this.state;
+    return (
+      <Input
+        type={type}
+        name={name}
+        value={data[name]}
+        onChange={this.handleFileSelected} 
+        label={label}
+        error={errors[name]}
+        multiple
+        classStyle={"form-control pb-5"}
+      />
+    );
+  }
+
+  renderTextarea(name, label) {
+    const { data, errors } = this.state;
+    return (
+      <Textarea
+        name={name}
+        value={data[name]}
+        label={label}
+        onChange={this.handleChange}
+        error={errors[name]}
+        rows="4" cols="50"
       />
     );
   }
