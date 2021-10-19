@@ -4,7 +4,6 @@ import {apiUrl} from "../config.json";
 import "../css/home.css";
 
 import CarouselContainer from './CarouselContainer';
-import MarqueeTag from './utils/marquee-tag';
 import CategoryArea from './utils/category-area';
 import OfferArea from './utils/offer-area';
 
@@ -29,8 +28,8 @@ class Home extends Component {
           <CarouselContainer />
           </div>
         </div>
-      <OfferArea />
       <CategoryArea />
+      <OfferArea />
     </React.Fragment>
     );
   }

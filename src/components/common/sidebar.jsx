@@ -8,7 +8,7 @@ const Sidebar = () => {
         <ul className="nav flex-column">
           <li className="nav-item">
             <NavLink className="nav-link" to="#">
-              Dashboard <span className="sr-only">(current)</span>
+            لوحة رئيسية <span className="sr-only">(current)</span>
             </NavLink>
           </li>
           <li className="nav-item">

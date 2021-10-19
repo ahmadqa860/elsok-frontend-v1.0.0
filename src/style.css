@@ -52,7 +52,6 @@
 body {
   font-family: 'Droid Arabic Naskh', serif !important;
   font-size: 1rem; 
-  direction: rtl;
   background-color: #EAEDED !important;
 }
 
@@ -476,6 +475,7 @@ textarea:focus,
     transform: translate3d(0, 30px, 0); } }
 
 .header_area {
+  direction: rtl;
   position: relative;
   z-index: 500; }
   .header_area .bigshop-main-menu {
@@ -517,8 +517,7 @@ textarea:focus,
     @media only screen and (max-width: 767px) {
       .header_area .classynav ul li a {
         padding: 20px 10px; } }
-    .header_area .classynav ul li a:focus, .header_area .classynav ul li a:hover {
-       }
+
   .header_area .classynav ul li li a {
     padding: 15px 25px; }
   .header_area .classynav ul li .dropdown {
@@ -602,10 +601,6 @@ textarea:focus,
 @media only screen and (max-width: 767px) {
   .classy-navbar-toggler {
     margin-right: 15px; } }
-
-.breakpoint-on .classynav ul li.has-down.active > .dd-trigger,
-.breakpoint-on .classynav ul li.megamenu-item.active > .dd-trigger {
-   }
 
 .hero_meta_area {
   position: relative;
@@ -1217,8 +1212,7 @@ textarea:focus,
       
       font-size: 13px;
       text-decoration: underline; }
-      .quickview_body .quickview_pro_des a:hover, .quickview_body .quickview_pro_des a:focus {
-         }
+
   .quickview_body .quantity {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1794,6 +1788,7 @@ textarea:focus,
 
 /* Footer Area */
 .footer_area {
+  direction: rtl;
   position: relative;
   z-index: 1;
   background-color: #1d2536; }
@@ -2137,6 +2132,7 @@ textarea:focus,
 
 /* Breadcumb CSS */
 .breadcumb_area {
+  direction: rtl;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -2297,15 +2293,16 @@ textarea:focus,
   padding: 30px;
   background-color: #f8f8ff; }
   .single_product_desc .title {
-    font-size: 18px; }
+    font-size: 2rem;
+    font-family: "Markazi Text", serif; }
   .single_product_desc .single_product_ratings {
     position: relative;
     z-index: 1; }
     .single_product_desc .single_product_ratings i {
       color: #ff9800;
-      font-size: 14px; }
+      font-size: 18px; }
     .single_product_desc .single_product_ratings span {
-      font-size: 13px; }
+      font-size: 18px; }
   .single_product_desc .price {
     font-size: 18px; }
     .single_product_desc .price span {
@@ -2313,10 +2310,11 @@ textarea:focus,
       font-size: 90%;
       text-decoration: line-through; }
   .single_product_desc .short_overview h6 {
-    font-size: 14px; }
+    font-size: 1.7rem; }
   .single_product_desc .short_overview p {
+    text-align: right;
     color: #747794;
-    font-size: 14px;
+    font-size: 1.5rem;
     font-weight: 300; }
   .single_product_desc .cart .quantity {
     display: -webkit-box;
@@ -2370,8 +2368,11 @@ textarea:focus,
     width: 120px;
     cursor: pointer; }
   .single_product_desc .others_info_area > a {
-    font-size: 12px;
-    font-weight: 400;
+    outline: none;
+    color: #070a57;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.0rem;
     margin-right: 15px;
     text-transform: capitalize; }
   .single_product_desc .size_guide_thumb a {
@@ -3053,7 +3054,7 @@ button.mfp-arrow {
   background-color: #f8f8ff;
   border-radius: 6px; }
   .login_form .form-control {
-    font-size: 13px;
+    font-size: 1.3rem;
     height: 45px;
     padding: 5px 20px;
     border-color: #d6e6fb; }
@@ -3204,18 +3205,24 @@ button.mfp-arrow {
     position: absolute;
     top: 50px;
     z-index: 9; }
-    .beach_offer_area .beach_offer_info p {
+    .beach_offer_area .beach_offer_info a p {
       color: #ffffff;
+      font-family: "Markazi Text", serif;
+      font-size: 1.2rem;
       margin-bottom: 0.5rem; }
     .beach_offer_area .beach_offer_info h3 {
+      font-family: "Markazi Text", serif;
+      font-size: 2rem;
       color: #ffffff;
       text-transform: uppercase; }
-    .beach_offer_area .beach_offer_info a {
-      background-color: #ffffff;
-      color: #070a57; }
-      .beach_offer_area .beach_offer_info a:hover, .beach_offer_area .beach_offer_info a:focus {
-        background-color: #070a57;
-        color: #ffffff; }
+    .beach_offer_area .beach_offer_info .apparels-offer-content h4 {
+      color: red;
+      right: 50px;
+      text-transform: uppercase; }
+    .beach_offer_area .beach_offer_info a p{
+      color: #ffffff; }
+    .beach_offer_area .beach_offer_info a:hover p, .beach_offer_area .beach_offer_info a:focus {
+    color: #F4623A; }
 
 /* Apparels Offer Area */
 .apparels_offer_area {
@@ -3229,16 +3236,38 @@ button.mfp-arrow {
     -o-transition-duration: 500ms;
     transition-duration: 500ms; }
   .apparels_offer_area .apparels_offer_info {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
     height: 100%;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 2;
     padding-left: 30px; }
+  .apparels_offer_area .apparels_offer_info .apparels-offer-content h4 {
+    font-family: "Markazi Text", serif;
+    font-size: 2rem;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    padding-left: 30px; }
+  .apparels_offer_area .apparels_offer_info .apparels-offer-content a {
+    font-family: "Markazi Text", serif;
+    font-size: 1.2rem;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    padding-left: 30px; }
+    .apparels_offer_area .apparels_offer_info .apparels-offer-content a:hover {
+      color: #F4623A;
+    }
+  
   .apparels_offer_area h4 {
     color: #ffffff;
-    font-weight: 400; }
+    font-weight: 400;
+    margin-right: 8px; }
+  .apparels_offer_area a {
+    color: #ffffff;
+    margin-right: 8px; }
   .apparels_offer_area span {
     font-size: 30px; }
   .apparels_offer_area .btn {
@@ -3833,3 +3862,11 @@ button.mfp-arrow {
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
     box-shadow: 0 0 8px 0 rgba(47, 91, 234, 0.125); }
+
+    .shop_grid_area{
+      direction: rtl;
+    }
+
+    .bigshop_reg_log_area{
+      direction: rtl;
+    }

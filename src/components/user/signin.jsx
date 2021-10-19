@@ -2,7 +2,7 @@ import React from "react";
 import Form from "../common/form";
 import Joi from "joi-browser";
 import userService from "../../services/userService";
-import { Link } from "react-router-dom";
+import ProfileHeader from "../utils/profileHeader"
 
 class Signin extends Form {
   state = {
@@ -14,8 +14,16 @@ class Signin extends Form {
   };
 
   schema = {
-    email: Joi.string().required().email().label("Email"),
-    password: Joi.string().required().label("Password"),
+    email: Joi.string().required().email().label("Email").error(() => {
+      return {
+        message: 'خطأ في ادخال البريد الالكتروني',
+      };
+    }),
+    password: Joi.string().required().min(6).label("Password").error(() => {
+      return {
+        message: 'خطأ في ادخال كلمة السر',
+      };
+    }),
   };
 
   doSubmit = async () => {
@@ -29,45 +37,25 @@ class Signin extends Form {
   render() {
     return (
       <React.Fragment> 
-      <div className="breadcumb_area">
-        <div className="container h-100">
-            <div className="row h-100 align-items-center">
-                <div className="col-12">
-                    <h5>Login &amp; Register</h5>
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                        <li className="breadcrumb-item active">Login &amp; Register</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-      </div>
+      <ProfileHeader titleText="قم بتسجيل حسابك الخاص"/>
       <div className="bigshop_reg_log_area section_padding_100_50">
         <div className="container">
             <div className="row">
                 <div className="col-12 col-md-6">
                     <div className="login_form mb-50">
-                        <h5 className="mb-3">Login</h5>
+                        <h5 className="mb-3">أدخل المعلومات</h5>
 
                         <form onSubmit={this.handleSubmit} method="post" autoComplete="off">
                             <div className="form-group">
-                              {this.renderInput("email", "Email", "email")}
+                              {this.renderInput("email", "عنوان البريد الالكتروني:", "email")}  
                             </div>
                             <div className="form-group">
-                              {this.renderInput("password", "Password", "password")}
+                              {this.renderInput("password", "ادخل كلمة المرور:", "password")}
                             </div>
-                            <div className="form-check">
-                                <div className="custom-control custom-checkbox mb-3 pl-1">
-                                    <input type="checkbox" className="custom-control-input" id="customChe"/>
-                                    <label className="custom-control-label" htmlFor="customChe">Remember me for this computer</label>
-                                </div>
-                            </div>
-                            {this.renderButton("Signin")}
+                            {this.renderButton("تسجيل")}
                         </form>
                         
-                        <div className="forget_pass mt-15">
-                            <Link to="/">Forget Password?</Link>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

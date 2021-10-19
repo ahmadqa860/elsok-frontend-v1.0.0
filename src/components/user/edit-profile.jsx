@@ -55,8 +55,6 @@ class Profile extends Form {
 
     doSubmit = async () => {
         var {data} = this.state;
-        console.log(data);
-        console.log("work");
         try{
           await http.put(`${apiUrl}/user/profile/${data.id}`,data);
 

@@ -1,9 +1,9 @@
 import React from "react";
 import Joi from "joi-browser";
-import LoadingPage from "../utils/loadingPage";
 import userService from "../../services/userService";
-import PageHeader from "../utils/pageHeader";
 import Form from "../common/form";
+import ProfileHeader from "../utils/profileHeader";
+import { NavLink } from "react-router-dom";
 
 class Signup extends Form {
   state = {
@@ -58,82 +58,43 @@ class Signup extends Form {
   };
 
   render() {
-    const {loading} = this.state;
-
+    //const {loading} = this.state;
+/*
     const infoNote = {
       color: "white",
       padding: "10px",
       fontFamily: "Arial"
-    };
+    };*/
     return (
-      /*
-      <div className="container">
-        <div className="row">
-          <div className="col-12 mt-4">
-            <PageHeader titleText="Signup for Real App" />
-          </div>
-          <div className="col-12">
-            <p>You can open new account for free!</p>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <form onSubmit={this.handleSubmit} autoComplete="off" method="POST">
-              {this.renderInput("email", "Email Address", "email")}
-              {this.renderInput("password", "Password", "password")}
-              {this.renderInput(
-                "password_confirmation",
-                "Confirm Password",
-                "password"
-              )}
-              {this.renderButton("Signup")}
-            </form>
-          </div>
+      <React.Fragment>
+        <ProfileHeader titleText="قم بتسجيل حسابك الخاص"/>
+        
+      <div className="bigshop_reg_log_area section_padding_100_50">
+        <div className="container">
+            <div className="row">
+                <div className="col-12 col-md-6">
+                    <div className="login_form mb-50">
+                        <h5 className="mb-3">أدخل المعلومات</h5>
+
+                        <form method="post" onSubmit={this.handleSubmit} autoComplete="off">
+                            <div className="form-group">
+                              {this.renderInput("email", "عنوان البريد الالكتروني:", "email")}
+                            </div>
+                            <div className="form-group">
+                              {this.renderInput("password", "ادخل كلمة المرور:", "password")}
+                            </div>
+                            <div className="form-group">
+                              {this.renderInput("password_confirmation","اعد كلمة المرور:","password")}  
+                            </div>
+                              {this.renderButton("تسجيل")}
+                              <NavLink to={'/signin'} ><h5 className="mt-3">لو تم تسجيلك من قبل اضغط هنا</h5></NavLink>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
-      */
-
-      <section id="signup">
-        
-      <div className="wrapper rounded">
-          <div className="Lcontainer">
-            <PageHeader titleText="قم بتسجيل حسابك الخاص" />
-            {!loading && (
-            <form className="Lform" onSubmit={this.handleSubmit} autoComplete="off" method="POST">
-              {this.renderInput("email", "عنوان البريد الالكتروني:", "email")}
-              {this.renderInput("password", "ادخل كلمة المرور:", "password")}
-              {this.renderInput(
-                "password_confirmation",
-                "اعد كلمة المرور:",
-                "password"
-              )}
-              {this.renderButton("تسجيل")}
-
-              <div className="mt-4 middleSection-Standardfont" style={infoNote}>
-                <p><strong className="pl-3">ملاحظة هامة!</strong>لو تم تسجيلك في الموقع من قبل فيمكنك الضغط على أضف منتج جديد في أعلى الصفحة </p>
-                <p>او اضغط هنا <a href="/add-product#addProduct">أضف منتج جديد</a></p>
-              </div>
-            </form>
-          )}
-
-          {loading && (<LoadingPage/>)}
-
-
-          <ul className="bg-bubbles">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                      </ul>
-                  </div>
-              </div>
-          </section>
+      </React.Fragment>
     );
   }
 }

@@ -9,7 +9,7 @@ import Navbar from "./components/utils/navbar";
 import Footer from "./components/utils/footer";
 
 import CategoryProducts from "./components/categoryProducts";
-import ProductView from "./components/utils/productView";
+import ProductDetails from "./components/utils/productDetails";
 
 import Home from "./components/home";
 import About from "./components/about";
@@ -20,7 +20,7 @@ import Signin from "./components/user/signin";
 import Profile from "./components/user/profile";
 import EditProfile from "./components/user/edit-profile";
 
-import Dashboard from "./components/shop/dashboard";
+import Dashboard from "./components/utils/dashboard";
 import AllShops from "./components/shop/all-shops";
 import AddShop from "./components/shop/add-shop";
 import EditShop from "./components/shop/edit-shop";
@@ -37,7 +37,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
 import "jquery/dist/jquery";
 import "popper.js/dist/popper";
-import "./js/default/scrollup";
 
 
 class App extends Component {
@@ -92,6 +91,7 @@ class App extends Component {
 
           <ProtectedRoute path="/my-profile" component={Profile} />
           <ProtectedRoute path="/edit-profile" component={EditProfile} />
+          <ProtectedRoute path="/dashboard" component={Dashboard} />
 
           <ProtectedRoute path="/product/my-products" component={MyProducts} />
           <ProtectedRoute
@@ -105,7 +105,7 @@ class App extends Component {
 
           <Route
             path="/categories/:categoryUrl/product/:id"
-            component={ProductView}
+            component={ProductDetails}
           />
           <Route path="/signin" component={Signin} />
           <Route path="/signup" component={Signup} />

@@ -3,6 +3,12 @@ import http from "../../services/httpService";
 import {apiUrl} from "../../config.json";
 import { NavLink } from 'react-router-dom';
 
+import carsCategoryImage from "../../img/bg-img/carsCategory.jpg";
+import electronicsCategoryImage from "../../img/bg-img/electronicsCategory.jpg";
+import mobileCategoryImage from "../../img/bg-img/mobileCategory.jpg";
+import propertyCategoryImage from "../../img/bg-img/propertyCategory.jpg";
+import toolsCategoryImage from "../../img/bg-img/toolsCategory.jpg";
+import "../../css/fonts-colors.css";
 
 class CategoryArea extends Component {
 
@@ -13,18 +19,18 @@ class CategoryArea extends Component {
 
     render(){
         return (
-            <section className="offer_area mt-50 mb-50">
+            <section className="offer_area mt-50">
             <div className="container">
                 <div className="row">
 
                     <div className="col-12 col-md-6 col-lg-4">
                         <div className="beach_offer_area mb-4 mb-md-0">
-                            <img src="img/product-img/beach.png" alt="beach-offer"/>
+                            <img src={carsCategoryImage} alt="beach-offer"/>
                             <div className="beach_offer_info">
-                                <p>Upto 70% OFF</p>
-                                <h3>Beach Item</h3>
-                                <a href="#" >SHOP NOW</a>
-                                <NavLink className="btn btn-primary btn-sm mt-15" to="/categories/cars">go to</NavLink>
+                                <h3>سيارات</h3>
+                                <NavLink  to="/categories/cars">
+                                <p>جميع انواع السيارات والمركبات الجديدة والمستعملة</p>
+                                </NavLink>
                             </div>
                         </div>
                     </div>
@@ -32,22 +38,22 @@ class CategoryArea extends Component {
                     <div className="col-12 col-md-6 col-lg-4">
                         
                         <div className="apparels_offer_area">
-                            <img src="img/product-img/weekly-offer.jpg" alt="Beach-Offer"/>
+                            <img src={electronicsCategoryImage} alt="Beach-Offer"/>
                             <div className="apparels_offer_info d-flex align-items-center">
                                 <div className="apparels-offer-content">
-                                    <h4>Apparel &amp; <br/><span>Garments</span></h4>
-                                    <a href="#" className="btn">Buy Now <i className="icofont-rounded-right"></i></a>
+                                    <h4>أجهزة - ألكترونيات &amp; <span>مستلزماتها</span></h4>
+                                    <NavLink  to="/categories/cars">كمبيوتر, شاشات, تلفزيونات, سماعات, مكبرات صوت وجميع المستلزمات</NavLink>
                                 </div>
                             </div>
                         </div>
     
                         
                         <div className="apparels_offer_area mt-30">
-                            <img src="img/product-img/weekly-offer.jpg" alt="weekly-deals"/>
+                            <img src={mobileCategoryImage} alt="weekly-deals"/>
                             <div className="apparels_offer_info d-flex align-items-center">
                                 <div className="apparels-offer-content">
-                                    <h4>Apparel &amp; <br/><span>Garments</span></h4>
-                                    <a href="#" className="btn">Buy Now <i className="icofont-rounded-right"></i></a>
+                                    <h4>الجوالات &amp; <br/><span>مستلزماتها</span></h4>
+                                    <NavLink  to="/categories/cars">هواتف ذكية جديدة\مستعملة, تابلت, ساعات ذكية, اكسسوارات وكل مستلزمات الهاتف</NavLink>
                                 </div>
                             </div>
                         </div>
@@ -55,28 +61,26 @@ class CategoryArea extends Component {
                     <div className="col-12 col-md-6 col-lg-4">
                         
                         <div className="apparels_offer_area">
-                            <img src="img/product-img/apparels.jpg" alt="Beach-Offer"/>
+                            <img src={propertyCategoryImage} alt="Beach-Offer"/>
                             <div className="apparels_offer_info d-flex align-items-center">
                                 <div className="apparels-offer-content">
-                                    <h4>Apparel &amp; <br/><span>Garments</span></h4>
-                                    <a href="#" className="btn">Buy Now <i className="icofont-rounded-right"></i></a>
+                                    <h4>عقارات مدنية &amp; <br/><span>تجارية</span></h4>
+                                    <NavLink  to="/categories/cars">أراضي, شقق, محلات تجارية, عمارات للبيع أو للأستئجار</NavLink>
                                 </div>
                             </div>
                         </div>
     
                         
                         <div className="apparels_offer_area mt-30">
-                            <img src="img/product-img/weekly-offer.jpg" alt="weekly-deals"/>
+                            <img src={toolsCategoryImage} alt="weekly-deals"/>
                             <div className="apparels_offer_info d-flex align-items-center">
                                 <div className="apparels-offer-content">
-                                    <h4>Apparel &amp; <br/><span>Garments</span></h4>
-                                    <a href="#" className="btn">Buy Now <i className="icofont-rounded-right"></i></a>
+                                    <h4>أدوات عمل&amp; <br/><span>صيانة</span></h4>
+                                    <NavLink  to="/categories/cars">أدوات يدوية وكهربائية لجميع المجالات</NavLink>
                                 </div>
                             </div>
                         </div>
-                    </div>
-    
-                    
+                    </div> 
                 </div>
             </div>
         </section>

@@ -16,12 +16,10 @@ class ProfileSidebar extends Component{
             <div className="col-12 col-lg-3">
                 <div className="my-account-navigation mb-50">
                     <ul>
-                        <li><NavLink to="my-account.html">Dashboard</NavLink></li>
-                        <li><NavLink to="/seller/my-products">my products</NavLink></li>
-                        <li><NavLink to="/seller/add-product">add product</NavLink></li>
-                        <li><NavLink to="addresses.html">Addresses</NavLink></li>
-                        <li className="active"><NavLink to="account-details.html">Account Details</NavLink></li>
-                        <li><NavLink to="/" onClick={this.handleLogout}>Logout</NavLink></li>
+                        <li><NavLink to="/dashboard">لوحة رئيسية</NavLink></li>
+                        <li><NavLink to="/product/my-products">منتجاتي</NavLink></li>
+                        <li><NavLink to="/product/add-product">أضف منتج</NavLink></li>
+                        <li><NavLink to="/" onClick={this.handleLogout}>تسجيل خروج</NavLink></li>
                     </ul>
                 </div>
             </div>

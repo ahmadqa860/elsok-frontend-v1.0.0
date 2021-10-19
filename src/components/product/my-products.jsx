@@ -28,19 +28,22 @@ class MyProducts extends Component{
         const {data} = this.state;
         return (
             <React.Fragment>
-                <ProfileHeader />
-                    <section className="my-account-area section_padding_100_50">
-                        <div className="container">
-                            <div className="row">
-                                <ProfileSidebar />
-                            </div>
-                            <div className="shop_grid_product_area">
-                                <div className="row justify-content-center">
-                                     {data.length > 0 && <Product props={this.state} />}
+                <ProfileHeader titleText="my products" />
+                <section className="shop_list_area section_padding_100_70">
+                    <div className="container">
+                        <div className="row">
+                            <ProfileSidebar />
+                            <div className="col-12 col-md-8 col-xl-9">
+                                <div className="shop_grid_product_area">
+                                    <div className="row justify-content-center">
+                                        {data.length > 0 && <Product props={this.state} />}
+                                    </div>
                                 </div>
                             </div>
+                            
                         </div>
-                    </section>
+                    </div>
+                </section>
             </React.Fragment>
         )
         }

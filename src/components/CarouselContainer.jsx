@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel'
 
 import slideImage1 from '../img/bg-img/slideImage1.jpeg';
 import slideImage2 from '../img/bg-img/slideImage2.jpg';
-import slideImage3 from '../img/bg-img/slideImage1.jpeg';
+import slideImage3 from '../img/bg-img/slideImage3.jpg';
 import "../css/carousel.css";
 
 const CarouselContainer = () => {
@@ -25,7 +25,7 @@ const CarouselContainer = () => {
           <img
             className="__items"
             src={slideImage2}
-            alt="Third slide"
+            alt="Second slide"
           />
           <Carousel.Caption>
             <h3 style={{textAlign:'center'}}>Second slide label</h3>

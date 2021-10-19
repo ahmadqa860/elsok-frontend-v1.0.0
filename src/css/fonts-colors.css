@@ -1,0 +1,24 @@
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75);
+  }
+  
+  .text-orange{
+    color: #F4623A;
+  }
+  
+  .text-blue{
+    color: #0A23C3;
+  }
+  
+  .Lemonada-font {
+    font-family: "Lemonada", cursive;
+  }
+  .Markazi-font {
+    font-family: "Markazi Text", serif;
+    
+  }
+
+  .cat-mainFont {
+    font-size: 2rem;
+    font-family: "Markazi Text", serif;
+  } 

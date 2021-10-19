@@ -5,8 +5,6 @@ import http from "../../services/httpService";
 import {apiUrl} from "../../config.json";
 import ProfileHeader from '../utils/profileHeader';
 import ProfileSidebar from '../utils/profileSidebar';
-
-import PageHeader from "../utils/pageHeader";
 import LoadingPage from "../utils/loadingPage";
 
 
@@ -118,14 +116,13 @@ class AddNewProduct extends Form{
         const {loading} = this.state;
         return (
     <React.Fragment>
-        <ProfileHeader />
         <section className="my-account-area section_padding_100_50">
                 <div className="container">
                     <div className="row">
                         <ProfileSidebar />
                         <div className="col-12 col-lg-9">
                             <div className="my-account-content mb-50">
-                            <PageHeader titleText="أضف منتوجك الى حسابك" />
+                            <ProfileHeader titleText="أضف منتوجك الى حسابك" />
                             {!loading && (
                             <form className="Lform" onSubmit={this.handleSubmit} autoComplete="off" method="POST" encType="multipart/form-data">
                                 <select

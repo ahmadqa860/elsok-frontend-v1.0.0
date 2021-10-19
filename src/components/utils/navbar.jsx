@@ -2,8 +2,9 @@ import React,{Component} from 'react';
 import http from '../../services/httpService';
 import {logout} from '../../services/userService';
 import {apiUrl} from '../../config.json';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import "../../css/navbar.css";
+
 import elsokLogo from "../../img/core-img/elsok-logo.svg";
 
 class Navbar extends Component{
@@ -39,24 +40,8 @@ class Navbar extends Component{
                 <div className="row h-100 align-items-center">
                     <div className="col-6">
                         <div className="welcome-note">
-                            <span className="popover--text" data-toggle="popover" data-content="Welcome to Bigshop ecommerce template."><i className="icofont-info-square"></i></span>
+                            <span className="popover--text" data-toggle="popover" data-content="مرحبا بك في موقع السوق"><i className="icofont-info-square"></i></span>
                             <span className="text">اهلا في موقعنا السوق</span>
-                        </div>
-                    </div>
-                    <div className="col-6">
-                        <div className="language-currency-dropdown d-flex align-items-center justify-content-end">
-                           
-                            <div className="language-dropdown">
-                                <div className="dropdown">
-                                    {/* <NavLink className="btn btn-sm dropdown-toggle" to={"#"} role="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        العربية
-                                    </NavLink> */}
-                             {/*        <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                        <a className="dropdown-item" href="#">Bangla</a>
-                                        <a className="dropdown-item" href="#">Arabic</a>
-                                    </div> */}
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,7 +58,7 @@ class Navbar extends Component{
                         <img className="header__logo" src={elsokLogo} alt="logo"/>
 
                         <div className="classy-navbar-toggler">
-                            <span className="navbarToggler"><span></span><span></span><span></span></span>
+                            <span className="navbarToggler"><span>hi</span><span>hi2</span><span>hi3</span></span>
                         </div>
 
                         <div className="classy-menu mt-auto">
@@ -96,7 +81,7 @@ class Navbar extends Component{
                         {!user && (
                             <div className="mr-auto d-flex align-items-center justify-content-end">
                                 <div className="account-area header-user">
-                                    <NavLink className="nav-link"  to={"/signin"}>تسجيل الدخول</NavLink>
+                                    <NavLink className="nav-link"  to={"/signup"}>تسجيل الدخول</NavLink>
                                 </div>
                             </div>
                         )}
@@ -109,7 +94,7 @@ class Navbar extends Component{
                                 </div>
                                 <ul className="user-meta-dropdown">
                                     <li className="user-title"><span>اهلا</span> {user.name}</li>
-                                    <li><NavLink to={"/my-profile"}>الحساب الخاص</NavLink></li>
+                                    <li><NavLink to={"/dashboard"}>الحساب الخاص</NavLink></li>
                                     <li><NavLink to={"order-list.html"}>Orders List</NavLink></li>
                                     <li><NavLink to={"wishlist.html"}>Wishlist</NavLink></li>
                                     <li><NavLink to={"/home"} onClick={this.handleLogout}><i className="icofont-logout"></i> Logout</NavLink></li>

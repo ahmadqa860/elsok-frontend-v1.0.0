@@ -20,6 +20,7 @@ class EditProduct extends Form{
 
     async componentDidMount(){
         const productId = this.props.match.params.id;
+        
         var {data} = await http.get(`${apiUrl}/seller-products/${productId}`);
         this.setState({data:this.mapToViewModel(data)});
         var {data}  = await http.get(`${apiUrl}/categories`);
@@ -57,7 +58,6 @@ class EditProduct extends Form{
 
     doSubmit = async ()=>{
         var {data} = this.state;
-        console.log(data);
         const productId = this.props.match.params.id;
         try{
             await http.put(`${apiUrl}/seller-products/${productId}`,data);
